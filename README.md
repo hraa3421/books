@@ -1,16 +1,20 @@
-# books
+# Pemrograman Asynchronous di Flutter
 
-A new Flutter project.
+## PRAKTIKUM 1: Mengunduh Data dari Web Service (API)
 
-## Getting Started
+**Deskripsi:**
 
-This project is a starting point for a Flutter application.
+Aplikasi ini mengimplementasikan cara mengambil atau mengunduh data dari sebuah Web Service API menggunakan Flutter.
 
-A few resources to get you started if this is your first Flutter project:
+**Soal 1:**
+Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Mengganti Tittle 
+![Screenshot aplikasi kamera](assets/tittle.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Soal 2:**
+Carilah judul buku favorit Anda di Google Books, lalu ganti ID buku pada variabel path di kode tersebut. 
+
+## Mengganti ID Buku
+![Screenshot aplikasi kamera](assets/W5_Soal_2.png)
+
