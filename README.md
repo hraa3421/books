@@ -47,3 +47,23 @@ Kode di dalam blok `onPressed` dari `ElevatedButton` memiliki fungsi utama untuk
 
 #### Hasil Praktikum
 ![Screenshot aplikasi kamera](assets/W5_Soal_3.gif)
+
+
+## PRAKTIKUM 2: Menggunakan await/async untuk menghindari callbacks
+
+## Soal 4: 
+
+**Pertanyaan:** Jelaskan maksud kode langkah 1 dan 2 tersebut!
+
+**Jawaban:**
+
+***Langkah 1:** 
+Pada langkah pertama ini bertujuan untuk mendefinisikan tiga fungsi asinkron (returnOneAsync, returnTwoAsync, returnThreeAsync) yang masing-masing mensimulasikan operasi yang membutuhkan waktu 3 detik. Setiap fungsi mengembalikan sebuah Future<int> yang akan menghasilkan nilai integer (1, 2, dan 3 secara berurutan) setelah penundaan selesai. Ini mengilustrasikan pembuatan operasi independen yang berjalan secara tidak memblokir.
+
+***Langkah 2:** 
+Pada langkah kedua ini yaitu menambahkan fungsi asinkron count() yang menggunakan async dan await untuk memanggil ketiga fungsi dari Langkah 1 secara berurutan. await memastikan bahwa setiap fungsi Future selesai sebelum fungsi berikutnya dipanggil. Hasil dari setiap Future dijumlahkan ke dalam variabel total. Terakhir, setState() digunakan untuk memperbarui tampilan UI dengan nilai total yang telah dikonversi menjadi string, menunjukkan bagaimana mengelola dan menggabungkan hasil dari beberapa operasi asinkron dan merefleksikannya pada antarmuka pengguna.
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_4.gif)
+
+
