@@ -67,6 +67,8 @@ Pada langkah kedua ini yaitu menambahkan fungsi asinkron count() yang menggunaka
 ![Screenshot aplikasi kamera](assets/W5_Soal_4.gif)
 
 
+## PRAKTIKUM 3: Menggunakan Completer di Future
+
 ## Soal 5: 
 
 **Pertanyaan:** Jelaskan maksud kode langkah 2 tersebut!
@@ -76,3 +78,18 @@ Pada langkah kedua ini yaitu menambahkan fungsi asinkron count() yang menggunaka
 
 #### Hasil Praktikum 
 ![Screenshot aplikasi kamera](assets/W5_Soal_5.gif)
+
+
+## Soal 6: 
+
+**Pertanyaan:** Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
+
+**Jawaban:**
+Perbedaan utama terletak pada penanganan error.
+
+Langkah 2: Mengimplementasikan operasi asinkron (calculate()) dan cara mendapatkan hasilnya (getNumber()) tanpa mekanisme penanganan error yang eksplisit. Jika terjadi kegagalan dalam operasi asinkron, tidak ada cara standar untuk memberitahu pemanggil (getNumber()) tentang hal tersebut.
+
+Langkah 5-6: Memperkenalkan penanganan error menggunakan blok try-catch di dalam fungsi calculate(). Jika terjadi error selama operasi asinkron, completer.completeError() dipanggil untuk menandakan kegagalan. Selanjutnya, pada bagian pemanggilan getNumber() di dalam onPressed(), ditambahkan .catchError() untuk menangkap dan merespons error yang mungkin terjadi, memungkinkan aplikasi untuk memberikan umpan balik atau melakukan tindakan pemulihan jika operasi asinkron gagal.
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_6.gif)

@@ -68,13 +68,17 @@ class _FuturePageState extends State<FuturePage> {
 
   Future<int> getNumber() {
     completer = Completer<int>();
-    calculate();
+    _calculate(); // Panggil _calculate yang benar
     return completer.future;
   }
 
-  Future<void> calculate() async {
-    await Future.delayed(const Duration(seconds: 5));
-    completer.complete(42);
+  Future<void> _calculate() async { // Ganti nama menjadi _calculate dan kembalikan void
+    try {
+      await Future.delayed(const Duration(seconds: 5));
+      completer.complete(42);
+    } catch (e) { // Tangkap error yang mungkin terjadi
+      completer.completeError(e); // Teruskan error ke Completer
+    }
   }
 
   @override
@@ -94,12 +98,13 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
               child: const Text('GO!'),
               onPressed: () {
-                // Memilih salah satu fungsi untuk dijalankan saat tombol ditekan
-                // count(); // Menjalankan fungsi count
                 getNumber().then((value) {
-                  // Menjalankan fungsi getNumber
                   setState(() {
                     result = value.toString();
+                  });
+                }).catchError((e) { // Tangkap error dari Future
+                  setState(() {
+                    result = 'An error occurred: $e'; // Tampilkan pesan error
                   });
                 });
               },
