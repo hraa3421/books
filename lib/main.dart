@@ -32,11 +32,12 @@ class FuturePage extends StatefulWidget {
 
 class _FuturePageState extends State<FuturePage> {
   String result = '';
+  late Completer<int> completer; // Inisialisasi Completer di sini
 
   Future<Response> getData() async {
-    const authority = 'www.googleapis.com'; // Perbaikan dari "authoirty" menjadi "authority"
+    const authority = 'www.googleapis.com';
     const path = '/books/v1/volumes/3ixIDwAAQBAJ';
-    Uri url = Uri.https(authority, path); // Perbaikan dari Uri.http() menjadi Uri.https()
+    final url = Uri.https(authority, path);
     return http.get(url);
   }
 
@@ -65,15 +66,26 @@ class _FuturePageState extends State<FuturePage> {
     });
   }
 
+  Future<int> getNumber() {
+    completer = Completer<int>();
+    calculate();
+    return completer.future;
+  }
+
+  Future<void> calculate() async {
+    await Future.delayed(const Duration(seconds: 5));
+    completer.complete(42);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Back from the Future',
-          style: TextStyle(color: Colors.white), // Mengubah warna teks menjadi putih
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.blue, // Menambahkan warna latar belakang pada AppBar
+        backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Column(
@@ -82,7 +94,14 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
               child: const Text('GO!'),
               onPressed: () {
-                count();
+                // Memilih salah satu fungsi untuk dijalankan saat tombol ditekan
+                // count(); // Menjalankan fungsi count
+                getNumber().then((value) {
+                  // Menjalankan fungsi getNumber
+                  setState(() {
+                    result = value.toString();
+                  });
+                });
               },
             ),
             const Spacer(),

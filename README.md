@@ -67,3 +67,12 @@ Pada langkah kedua ini yaitu menambahkan fungsi asinkron count() yang menggunaka
 ![Screenshot aplikasi kamera](assets/W5_Soal_4.gif)
 
 
+## Soal 5: 
+
+**Pertanyaan:** Jelaskan maksud kode langkah 2 tersebut!
+
+**Jawaban:**
+ Pada Kode Langkah 2 ini memperkenalkan Completer sebagai mekanisme untuk mengelola penyelesaian operasi asinkron secara manual. getNumber() membuat sebuah Completer dan mengembalikan Future yang terkait dengannya. Operasi yang sebenarnya (simulated by calculate()) dilakukan secara terpisah dan, setelah selesai (dalam hal ini, setelah penundaan 5 detik), completer.complete(42) dipanggil untuk menandakan bahwa Future telah berhasil diselesaikan dengan nilai 42. Ini memberikan kontrol eksplisit atas kapan dan bagaimana sebuah Future diselesaikan, yang berguna untuk menangani operasi asinkron yang penyelesaiannya tidak terjadi secara langsung atau dikelola oleh bagian kode yang berbeda.
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_5.gif)
