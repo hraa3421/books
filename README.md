@@ -46,4 +46,4 @@ Kode di dalam blok `onPressed` dari `ElevatedButton` memiliki fungsi utama untuk
 * **`catchError((_) { ... })`:** Berfungsi sebagai mekanisme penanganan error. Jika terjadi masalah saat pengambilan data, kode ini akan menampilkan pesan error yang lebih informatif kepada pengguna daripada aplikasi yang berhenti tiba-tiba.
 
 #### Hasil Praktikum
-![Screenshot aplikasi kamera](assets/W5_Soal _3.gif)
+![Screenshot aplikasi kamera](assets/W5_Soal_3.gif)
