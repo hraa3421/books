@@ -93,3 +93,13 @@ Langkah 5-6: Memperkenalkan penanganan error menggunakan blok try-catch di dalam
 
 #### Hasil Praktikum 
 ![Screenshot aplikasi kamera](assets/W5_Soal_6.gif)
+
+
+## PRAKTIKUM 4: Memanggil Future secara paralel
+
+## Soal 7: 
+
+**Penjelasan:** Anda akan melihat hasilnya dalam 3 detik berupa angka 6 lebih cepat dibandingkan praktikum sebelumnya menunggu sampai 9 detik.
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_7.gif)
