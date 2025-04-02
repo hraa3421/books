@@ -259,9 +259,9 @@ Tombol "Green (Sage)" dan "Navy": Ketika salah satu tombol ini ditekan, tampilan
 
 1. Ketika Anda menjalankan aplikasi dengan kode navigation_dialog.dart ini dan menekan tombol "Change Color", sebuah dialog akan muncul dengan tiga pilihan warna: "Tosca", "Sage", dan "Navy".
 
-Yang Terjadi Saat Anda Mengklik Setiap Tombol:
+  Yang Terjadi Saat Anda Mengklik Setiap Tombol:
 
-Tombol "Tosca":
+  Tombol "Tosca":
 
 - Ketika Anda mengklik tombol "Tosca", variabel tempColor di dalam onPressed akan diisi dengan nilai const Color.fromARGB(255, 47, 184, 211) (warna tosca).
 - Kemudian, Navigator.pop(context, tempColor) dipanggil. Ini akan menutup dialog dan mengembalikan nilai tempColor (warna tosca) kembali ke _showColorDialog function.
@@ -271,12 +271,12 @@ Sebagai hasilnya, warna latar belakang layar "Navigation Dialog Screen" akan ber
 
 1. Mengapa Demikian?
 
-Mekanisme ini bekerja karena:
+   Mekanisme ini bekerja karena:
 
-ElevatedButton di dalam dialog memiliki onPressed callback yang menentukan warna yang akan dikembalikan.
-Navigator.pop(context, color) digunakan untuk menutup dialog dan mengirim data (warna) kembali ke Future yang dibuat oleh showDialog.
-await showDialog(...) menunggu hingga dialog ditutup dan menerima data yang dikembalikan.
-setState() digunakan untuk memperbarui state widget (_NavigationDialogScreenState) dengan warna yang dipilih, yang kemudian memicu pembangunan ulang UI dengan warna latar belakang yang baru.
+   ElevatedButton di dalam dialog memiliki onPressed callback yang menentukan warna yang akan dikembalikan.
+   Navigator.pop(context, color) digunakan untuk menutup dialog dan mengirim data (warna) kembali ke Future yang dibuat oleh showDialog.
+   await showDialog(...) menunggu hingga dialog ditutup dan menerima data yang dikembalikan.
+   setState() digunakan untuk memperbarui state widget (_NavigationDialogScreenState) dengan warna yang dipilih, yang kemudian memicu pembangunan ulang UI dengan warna latar belakang yang baru.
 
 2. Pemilihan Warna: Di layar "Navigation Dialog", terdapat tiga tombol dengan pilihan warna: "Tosca", "Sage", dan "Navy".
 
