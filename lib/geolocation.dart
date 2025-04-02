@@ -16,15 +16,29 @@ class _LocationScreenState extends State<LocationScreen> {
     super.initState();
     getPosition().then((Position myPos) {
       myPosition =
-          'Latitude: ${myPos.latitude.toString()} Longitude: ${myPos.longitude.toString()}';
+          'Latitude: ${myPos.latitude.toStringAsFixed(7)} Longitude: ${myPos.longitude.toStringAsFixed(7)}';
       setState(() {
-        myPosition = myPosition;
+        myPosition = myPosition.replaceAll('Latitude:', 'Latitude : ').replaceAll('Longitude:', ' Longitude : ');
       });
+    }).catchError((error) {
+      myPosition = error.toString().replaceAll('-Heni RA-', '');
+      setState(() {});
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final Widget myWidget = myPosition.isEmpty
+        ? const CircularProgressIndicator()
+        : Text(
+            myPosition,
+            style: const TextStyle(
+              fontSize: 16.0,
+              color: Colors.black87,
+            ),
+            textAlign: TextAlign.center,
+          );
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -33,35 +47,27 @@ class _LocationScreenState extends State<LocationScreen> {
         ),
         backgroundColor: Colors.blue,
       ),
-      backgroundColor: Colors.grey[300], // Warna background utama abu-abu terang
+      backgroundColor: Colors.grey[300],
       body: Center(
-        child: Text(
-          myPosition,
-          style: const TextStyle(
-            fontSize: 16.0,
-            color: Colors.black87, // Warna teks koordinat
-          ),
-          textAlign: TextAlign.center,
-        ),
+        child: myWidget,
       ),
     );
   }
 
   Future<Position> getPosition() async {
+    await Future.delayed(const Duration(seconds: 3)); // Tambahkan delay 3 detik
     LocationPermission permission = await Geolocator.requestPermission();
     if (permission == LocationPermission.denied) {
-      // Handle denied permission
       return Future.error('Location permissions are denied -Heni RA-');
     }
 
     if (permission == LocationPermission.deniedForever) {
-      // Handle permanently denied permission
-      return Future.error('Location permissions are permanently denied, we cannot request them -Heni RA-');
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request them -Heni RA-');
     }
 
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      // Handle disabled location service
       return Future.error('Location services are disabled -Heni RA-');
     }
 

@@ -159,3 +159,22 @@ menggunakan try untuk memanggil returnError(), catch untuk menangkap error dan m
 
 #### Hasil Praktikum 
 ![Screenshot aplikasi kamera](assets/W5_Soal_11.gif)
+
+## Soal 12: 
+
+**Pertanyaan:**
+1. Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+
+2. Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+
+**Jawaban:**
+
+1. Sudah saya Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+## ![Screenshot aplikasi kamera](assets/duration.png)
+
+2. saya mendapatkannya ketika running dibrowser, dikarenakan saya menizinkan untuk aktuf gps.
+akan tetapi, itu kemungkinan besar merupakan perkiraan lokasi yang dihitung oleh browser menggunakan salah satu atau kombinasi dari metode di atas (Wi-Fi, IP, informasi seluler jika ada). Bukan berarti browser secara langsung mengakses chip GPS perangkat Anda seperti yang dilakukan oleh aplikasi native di ponsel.
+## ![Screenshot aplikasi kamera](assets/gps.png)
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_12.gif)
