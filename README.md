@@ -245,3 +245,40 @@ Tombol "Green (Sage)" dan "Navy": Ketika salah satu tombol ini ditekan, tampilan
 
 #### Hasil Praktikum soal-16
 ![Screenshot aplikasi kamera](assets/W5_Soal_16.gif)
+
+
+## PRAKTIKUM 9: Memanfaatkan async/await dengan Widget Dialog
+
+## Soal 17:
+
+**Pertanyaan:** 
+1. Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+2. Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+
+**Jawaban:**
+
+1. Ketika Anda menjalankan aplikasi dengan kode navigation_dialog.dart ini dan menekan tombol "Change Color", sebuah dialog akan muncul dengan tiga pilihan warna: "Tosca", "Sage", dan "Navy".
+
+Yang Terjadi Saat Anda Mengklik Setiap Tombol:
+
+Tombol "Tosca":
+
+- Ketika Anda mengklik tombol "Tosca", variabel tempColor di dalam onPressed akan diisi dengan nilai const Color.fromARGB(255, 47, 184, 211) (warna tosca).
+- Kemudian, Navigator.pop(context, tempColor) dipanggil. Ini akan menutup dialog dan mengembalikan nilai tempColor (warna tosca) kembali ke _showColorDialog function.
+- Di dalam _showColorDialog, nilai yang dikembalikan dari showDialog akan disimpan di variabel selectedColor. Karena Anda memilih "Tosca", selectedColor akan berisi warna tosca.
+- setState(() { color = selectedColor; }); akan dipanggil. Ini akan memperbarui state color pada _NavigationDialogScreenState dengan warna tosca.
+Sebagai hasilnya, warna latar belakang layar "Navigation Dialog Screen" akan berubah menjadi warna tosca.
+
+1. Mengapa Demikian?
+
+Mekanisme ini bekerja karena:
+
+ElevatedButton di dalam dialog memiliki onPressed callback yang menentukan warna yang akan dikembalikan.
+Navigator.pop(context, color) digunakan untuk menutup dialog dan mengirim data (warna) kembali ke Future yang dibuat oleh showDialog.
+await showDialog(...) menunggu hingga dialog ditutup dan menerima data yang dikembalikan.
+setState() digunakan untuk memperbarui state widget (_NavigationDialogScreenState) dengan warna yang dipilih, yang kemudian memicu pembangunan ulang UI dengan warna latar belakang yang baru.
+
+2. Pemilihan Warna: Di layar "Navigation Dialog", terdapat tiga tombol dengan pilihan warna: "Tosca", "Sage", dan "Navy".
+
+#### Hasil Praktikum soal-17
+![Screenshot aplikasi kamera](assets/W5_Soal_17.gif)
