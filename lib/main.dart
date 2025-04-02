@@ -72,31 +72,38 @@ class _FuturePageState extends State<FuturePage> {
     return completer.future;
   }
 
-  Future<void> _calculate() async { // Ganti nama menjadi _calculate dan kembalikan void
+  Future<void> _calculate() async {
+    // Ganti nama menjadi _calculate dan kembalikan void
     try {
       await Future.delayed(const Duration(seconds: 5));
       completer.complete(42);
-    } catch (e) { // Tangkap error yang mungkin terjadi
+    } catch (e) {
+      // Tangkap error yang mungkin terjadi
       completer.completeError(e); // Teruskan error ke Completer
     }
   }
 
+  Future<void> returnError() async {
+    await Future.delayed(const Duration(seconds: 2));
+    throw ('Something terrible happened!');
+  }
+
   // void returnFG() {
-  //   FutureGroup<int> futureGroup = FutureGroup<int>();
-  //   futureGroup.add(returnOneAsync());
-  //   futureGroup.add(returnTwoAsync());
-  //   futureGroup.add(returnThreeAsync());
-  //   futureGroup.close();
+  //   FutureGroup<int> futureGroup = FutureGroup<int>();
+  //   futureGroup.add(returnOneAsync());
+  //   futureGroup.add(returnTwoAsync());
+  //   futureGroup.add(returnThreeAsync());
+  //   futureGroup.close();
   //
-  //   futureGroup.future.then((List<int> value) {
-  //     int total = 0;
-  //     for (var element in value) {
-  //       total += element;
-  //     }
-  //     setState(() {
-  //       result = total.toString();
-  //     });
-  //   });
+  //   futureGroup.future.then((List<int> value) {
+  //     int total = 0;
+  //     for (var element in value) {
+  //       total += element;
+  //     }
+  //     setState(() {
+  //       result = total.toString();
+  //     });
+  //   });
   // }
 
   void returnFW() {
@@ -134,7 +141,16 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
               child: const Text('GO!'),
               onPressed: () {
-                returnFW(); // Panggil fungsi returnFW (menggunakan Future.wait) saat tombol ditekan
+                returnError()
+                    .then((value) {
+                  setState(() {
+                    result = 'Success';
+                  });
+                }).catchError((onError) {
+                  setState(() {
+                    result = onError.toString();
+                  });
+                }).whenComplete(() => print('Complete'));
               },
             ),
             const Spacer(),

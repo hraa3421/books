@@ -117,3 +117,14 @@ Jadi, intinya adalah:
 
 Jika anda sudah memiliki semua operasi asinkron yang ingin dijalankan paralel dalam sebuah daftar, Future.wait adalah cara yang lebih langsung dan ringkas.
 Jika Anda perlu menambahkan operasi asinkron secara bertahap atau mungkin tidak tahu semua operasi di awal, FutureGroup memberikan fleksibilitas lebih.
+
+
+## PRAKTIKUM 5: Menangani Respon Error pada Async Code
+
+## Soal 9: 
+
+**Penjelasan:**
+Praktikum 5 ini menunjukkan cara menggunakan Future untuk melakukan operasi asinkron (returnError) yang sengaja dibuat untuk gagal. Kita kemudian menggunakan .then() untuk menangani keberhasilan (yang tidak akan terjadi di sini), .catchError() untuk menangkap dan menampilkan pesan error, dan .whenComplete() untuk menjalankan kode setelah Future selesai, terlepas dari keberhasilan atau kegagalan. Tujuannya adalah untuk mengilustrasikan pola penanganan hasil dan error dalam pemrograman asinkron di Flutter 
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_9.gif)
