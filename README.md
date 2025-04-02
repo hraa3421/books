@@ -193,3 +193,19 @@ Secara keseluruhan, FutureBuilder merupakan cara yang lebih modern untuk menanga
 
 #### Hasil Praktikum 
 ![Screenshot aplikasi kamera](assets/W5_Soal_13.gif)
+
+
+## Soal 14: 
+
+**Pertanyaan:** Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+
+**Jawaban:**
+Iya, ada perbedaan UI dengan langkah sebelumnya setelah menambahkan penanganan error pada FutureBuilder.
+
+Sebelumnya: Jika terjadi error saat mendapatkan lokasi (misalnya, izin ditolak).
+UI mungkin tidak memberikan indikasi yang jelas kepada pengguna bahwa telah terjadi kesalahan. Kemungkinan hanya akan menampilkan teks kosong atau tidak ada perubahan setelah indikator loading hilang.
+
+Sekarang (Setelah Penambahan Kode Error): Jika terjadi error saat mendapatkan lokasi, UI akan menampilkan teks: "Something terrible happened!" di tengah layar. Ini memberikan umpan balik yang jelas kepada pengguna bahwa ada masalah dalam mendapatkan lokasi.
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_14.gif)
