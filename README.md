@@ -128,3 +128,24 @@ Praktikum 5 ini menunjukkan cara menggunakan Future untuk melakukan operasi asin
 
 #### Hasil Praktikum 
 ![Screenshot aplikasi kamera](assets/W5_Soal_9.gif)
+
+
+## Soal 10: 
+
+**Pertanyaan:** Jelaskan maksud perbedaan kode langkah 1 dan 4!
+
+**Jawaban:**
+
+Perbedaan Langkah 1 dan Langkah 4:
+
+***Langkah 1:*** 
+Mendeklarasikan fungsi returnError(), yang akan menunggu selama 2 detik (Future.delayed) sebelum melemparkan sebuah exception (throw Exception).
+Langkah 1 tidak memiliki mekanisme penanganan error, hanya melempar error.
+
+***Langkah 4:***
+Mendefinisikan fungsi handleError(), yang menangani error dari returnError() menggunakan try-catch-finally. Jika terjadi error, hasilnya akan disimpan dalam setState(), dan program tetap berjalan tanpa crash.
+menggunakan try untuk memanggil returnError(), catch untuk menangkap error dan menampilkannya di UI, serta finally untuk mencetak "Complete".
+
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_10.gif)
