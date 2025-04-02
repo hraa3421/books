@@ -221,3 +221,27 @@ Silakan ganti dengan warna tema favorit Anda.
 
 #### Hasil Praktikum soal-15
 ![Screenshot aplikasi kamera](assets/W5_Soal_15.png)
+
+## Soal 16: 
+
+**Pertanyaan:** 
+1. Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+2. Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+
+**Jawaban:**
+1. Navigasi: Saat tombol "Change Color" ditekan di layar "Navigation First Screen", fungsi _navigateAndGetColor(context) dipanggil. Fungsi ini menggunakan Navigator.push untuk membuka layar "Navigation Second Screen".
+
+2. Pemilihan Warna: Di layar "Navigation Second Screen", terdapat tiga tombol dengan pilihan warna: "Tosca", "Green (Sage)", dan "Navy".
+
+Saat tombol ditekan:
+
+Tombol "Tosca": Saat ditekan, aplikasi akan:
+
+Mengatur variabel color dengan nilai const Color.fromARGB(255, 125, 193, 224) (warna tosca).
+
+Memanggil Navigator.pop(context, color), yang akan menutup layar "Navigation Second Screen" dan mengembalikan nilai warna Tosca ke layar sebelumnya ("Navigation First Screen").
+
+Tombol "Green (Sage)" dan "Navy": Ketika salah satu tombol ini ditekan, tampilan di layar "Navigation First Screen" akan berubah sesuai dengan warna yang dipilih.
+
+#### Hasil Praktikum soal-16
+![Screenshot aplikasi kamera](assets/W5_Soal_16.gif)
