@@ -103,3 +103,17 @@ Langkah 5-6: Memperkenalkan penanganan error menggunakan blok try-catch di dalam
 
 #### Hasil Praktikum 
 ![Screenshot aplikasi kamera](assets/W5_Soal_7.gif)
+
+## Soal 8: 
+
+**Pertanyaan:** Jelaskan maksud perbedaan kode langkah 1 dan 4!
+
+**Jawaban:**
+returnFG() dengan FutureGroup: seperti membuat wadah (futureGroup), memasukkan setiap operasi asinkron (returnOneAsync, returnTwoAsync, returnThreeAsync) ke dalamnya satu per satu, lalu memberi tahu bahwa tidak ada lagi yang akan ditambahkan (close()).  kemudian menunggu hasilnya dari wadah tersebut.
+
+Future.wait([returnOneAsync(), returnTwoAsync(), returnThreeAsync()]): seperti langsung membuat daftar berisi semua operasi asinkron yang ingin Anda tunggu dan memberikannya ke Future.wait.
+
+Jadi, intinya adalah:
+
+Jika anda sudah memiliki semua operasi asinkron yang ingin dijalankan paralel dalam sebuah daftar, Future.wait adalah cara yang lebih langsung dan ringkas.
+Jika Anda perlu menambahkan operasi asinkron secara bertahap atau mungkin tidak tahu semua operasi di awal, FutureGroup memberikan fleksibilitas lebih.
