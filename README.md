@@ -209,3 +209,15 @@ Sekarang (Setelah Penambahan Kode Error): Jika terjadi error saat mendapatkan lo
 
 #### Hasil Praktikum 
 ![Screenshot aplikasi kamera](assets/W5_Soal_14.gif)
+
+
+## PRAKTIKUM 8: Navigation route dengan Future Function
+
+## Soal 15: 
+
+**Pertanyaan:** 
+Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+Silakan ganti dengan warna tema favorit Anda.
+
+#### Hasil Praktikum soal-15
+![Screenshot aplikasi kamera](assets/W5_Soal_15.png)
