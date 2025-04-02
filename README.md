@@ -178,3 +178,18 @@ akan tetapi, itu kemungkinan besar merupakan perkiraan lokasi yang dihitung oleh
 
 #### Hasil Praktikum 6
 ![Screenshot aplikasi kamera](assets/W5_Soal_12.gif)
+
+
+## PRAKTIKUM 7: Manajemen Future dengan FutureBuilder
+
+## Soal 13: 
+
+**Pertanyaan:** Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+
+**Jawaban:**
+Iya, ada perbedaan dalam tampilan UI antara kedua kode tersebut. Perbedaan utamanya terletak pada bagaimana data lokasi ditampilkan.
+Kode lama secara eksplisit memformat latitude dan longitude dengan 7 digit desimal, sementara kode terbaru menampilkan format yang mirip namun tanpa pemformatan eksplisit dalam kode yang diberikan, mengindikasikan kemungkinan perilaku default toString() yang berbeda atau modifikasi kode lain. 
+Secara keseluruhan, FutureBuilder merupakan cara yang lebih modern untuk menangani operasi asinkron di Flutter, meskipun mungkin memerlukan langkah tambahan untuk memformat tampilan data sesuai kebutuhan
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_13.gif)
