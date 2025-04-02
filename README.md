@@ -149,3 +149,13 @@ menggunakan try untuk memanggil returnError(), catch untuk menangkap error dan m
 
 #### Hasil Praktikum 
 ![Screenshot aplikasi kamera](assets/W5_Soal_10.gif)
+
+
+## PRAKTIKUM 6: Menggunakan Future dengan StatefulWidget
+
+## Soal 11: 
+
+**Pertanyaan:** Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+
+#### Hasil Praktikum 
+![Screenshot aplikasi kamera](assets/W5_Soal_11.gif)
